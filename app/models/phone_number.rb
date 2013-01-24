@@ -1,4 +1,5 @@
 class PhoneNumber < ActiveRecord::Base
+  belongs_to :tenant
   attr_accessible :number
 
   def formatted_number

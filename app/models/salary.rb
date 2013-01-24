@@ -11,6 +11,7 @@
 #
 
 class Salary < ActiveRecord::Base
+  belongs_to :tenant
   attr_accessible :number_of_payments, :payment_ammount, :type
   def self.calculate_yearly_salary(salaries)
     salaries.inject(0) do |total_salary, salary|
