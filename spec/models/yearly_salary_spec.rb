@@ -14,6 +14,7 @@ require 'spec_helper'
 
 describe YearlySalary do
   before(:each) do
+    @tenant = Factory(:tenant)
     @attrs = { :payment_ammount => 60000 }
   end
   it "should have one payment per year" do
@@ -32,4 +33,10 @@ describe YearlySalary do
     yearly_salary = YearlySalary.create!(@attrs)
     yearly_salary.calculate_monthly_salary.should eq(5000)
   end
+  it 'should know who its tenant is' do
+    s = YearlySalary.create!(@attrs)
+    s.tenant_id = @tenant.id
+    s.tenant.first_name.should eq("James")
+  end
+
 end
