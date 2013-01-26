@@ -2,6 +2,8 @@
   Listing all tenants
 -if @tenants.size > 0
   %ol
+    %li
+      =link_to "New", new_tenant_path
     -@tenants.each do |tenant|
       %li
         =link_to "#{tenant.last_name}, #{tenant.first_name} #{tenant.middle_name}", tenant_path(tenant.id)

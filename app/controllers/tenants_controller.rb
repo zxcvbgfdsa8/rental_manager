@@ -6,10 +6,16 @@ class TenantsController < ApplicationController
     @tenant = Tenant.find(params[:id])
   end
   def new
-
+    @tenant = Tenant.new
   end
   def create
-
+    @tenant = Tenant.new(params[:tenant])
+    if @tenant.save
+      flash[:successs] = "New Tenant, #{@tenant.first_name} Created"
+      redirect_to @tenant
+    else
+      render 'new'
+    end
   end
   def edit
 

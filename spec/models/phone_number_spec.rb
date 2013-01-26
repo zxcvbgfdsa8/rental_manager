@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: phone_numbers
+#
+#  id         :integer          not null, primary key
+#  number     :string(255)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  tenant_id  :integer
+#
+
 require 'spec_helper'
 
 describe PhoneNumber do

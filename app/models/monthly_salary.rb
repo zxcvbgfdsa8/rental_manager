@@ -8,6 +8,7 @@
 #  number_of_payments :integer
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
+#  tenant_id          :integer
 #
 
 class MonthlySalary < Salary
