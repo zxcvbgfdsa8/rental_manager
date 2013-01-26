@@ -1,0 +1,11 @@
+%h1
+  Listing all tenants
+-if @tenants.size > 0
+  %ol
+    -@tenants.each do |tenant|
+      %li
+        =link_to "#{tenant.last_name}, #{tenant.first_name} #{tenant.middle_name}", tenant_path(tenant.id)
+-else
+  No tenants found.  Would you like to create one? 
+  =link_to "New", new_tenant_path
+

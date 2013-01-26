@@ -1,4 +1,7 @@
 RentalManager::Application.routes.draw do
+  resources :tenants
+  resources :salaries
+  resources :phone_numbers
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
