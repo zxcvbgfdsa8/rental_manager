@@ -7,6 +7,7 @@ class TenantsController < ApplicationController
   end
   def new
     @tenant = Tenant.new
+    2.times{ @tenant.phone_numbers.build }
   end
   def create
     @tenant = Tenant.new(params[:tenant])

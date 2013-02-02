@@ -1,18 +1,24 @@
 %h1
   Add new Tenant!
 =form_for(@tenant) do |f|
-  =render 'shared/error_messages', object: f.object
-  =f.label :first_name
-  =f.text_field :first_name
+  // =render 'shared/error_messages', object: f.object
+  %ul
+    %li
+      =f.label :first_name
+      =f.text_field :first_name
+    %li
+      =f.label :middle_name
+      =f.text_field :middle_name
 
-  =f.label :middle_name
-  =f.text_field :middle_name
-
-  
-  =f.label :last_name
-  =f.text_field :last_name
-
-  =f.label :email
-  =f.text_field :email
-
-  =f.submit "Add new tenant"
+    %li
+      =f.label :last_name
+      =f.text_field :last_name
+    %li
+      =f.fields_for :phone_numbers do |f_pn|
+        =f_pn.label :number
+        =f_pn.text_field :number
+    %li
+      =f.label :email
+      =f.text_field :email
+    %li
+      =f.submit "Add new tenant"
